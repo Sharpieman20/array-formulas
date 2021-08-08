@@ -1,0 +1,9 @@
+=IFERROR(
+    AVERAGEIF(
+        ARRAYFORMULA(
+            IF(IMPORTRANGE($A3,"Raw Data!D2:D"&$B3)>0,
+                IF(IMPORTRANGE($A3,"Raw Data!E2:E"&$B3)>IMPORTRANGE($A3,"Raw Data!D2:D"&$B3),IMPORTRANGE($A3,"Raw Data!E2:E"&$B3))
+            )
+        ), 
+    ">=0"), 
+"")
