@@ -1,0 +1,11 @@
+=IFERROR(
+    SUM(
+        ARRAYFORMULA(
+            IF(IMPORTRANGE($A3,"Raw Data!H2:H"&$B3)>0,
+                IF(IMPORTRANGE($A3,"Raw Data!H2:H"&$B3)<9/60/24,
+                    1
+                )
+            )
+        )
+   ), 
+"")
